@@ -1,23 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './Component/Navbar/Navbar';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from './Component/Home/Home';
+import AllHiragana from './Component/AllHiragana/AllHiragana';
+import PracHira from './Component/PracHira/PracHira';
+import Katagana from './Component/Katagana/Katagana';
+import PracKatagana from './Component/PracKatagana/PracKatagana';
+import Footer from './Component/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home></Home>} />
+          <Route path="/allHira" element={<AllHiragana></AllHiragana>} />
+          <Route path="/pracHira" element={<PracHira></PracHira>} />
+          <Route path="/allKata" element={<Katagana></Katagana>} />
+          <Route path="/pracKata" element={<PracKatagana></PracKatagana>} />
+
+        </Routes>
+      </BrowserRouter>
+      <Footer></Footer>
     </div>
   );
 }
